@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("Task 8   Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.")
+
+        function time_in_seconds(h, m, s){        
+            alert("Введенное вами время содержит "+Number(h*3600+m*60+s)+" секунд")                 
+        }
+
+        let hour=Number(prompt("Введите сколько часов вы хотите задать", "10"));
+        let minutes=Number(prompt("Введите сколько минут вы хотите задать", "30"));
+        let seconds=Number(prompt("Введите сколько секунд вы хотите задать", "45"));
+
+        time_in_seconds(hour, minutes, seconds)                   
+
+    </script>
+</body>
+</html>

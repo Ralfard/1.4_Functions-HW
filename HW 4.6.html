@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("Task 6   Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными. Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.")
+
+        function perfect(x){                                //функция скопирована из прошлого задания
+            let summ=0
+            for(i=(x-1);i!=0;--i){
+                diviver=x%i;
+                if(diviver===0){
+                    summ=summ+i;
+                }
+            }
+            if(summ==x){
+                return true
+            }
+            else
+                return false
+        }
+
+        
+        function range (x,y){
+            document.write("<br><br>Совершенные числа в заданном диапазоне:");
+            for(j=y;j!=(x-1);--j){//методом перебора находим совершенные числа...
+                if(perfect(j)){//...вызывая функцию проверки чисел на совершенность
+                document.write("<br>"+j);
+            }
+            }
+        }
+
+        let max=prompt("Введите максимальное число диапазона","500")
+        let min=prompt("Введите минимальное число диапазона","1")
+
+
+        range(min,max)
+
+
+
+    </script>
+</body>
+</html>

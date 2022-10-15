@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("Task 2   Написать функцию, которая вычисляет факториал переданного ей числа.<br>")
+
+        function factorial(x){
+            let result=1;
+            for(i=2;i!=x+1;++i){
+                result*=i
+                document.write(result+"<br>")
+            }
+        }
+
+        let num=Number(prompt("Введите число что бы вычислить факториал","5"))
+        factorial(num);
+
+    </script>
+</body>
+</html>

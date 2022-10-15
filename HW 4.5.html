@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        document.write("Task 5   Написать функцию, которая проверяет, является ли переданное ей число совершенным. Совершенное число – это число, равное сумме всех своих собственных делителей.<br> Пример совершенных чисел: 28==1+2+4+7+14 || 6==1+2+3")
+
+        function perfectNumber(x){
+            let summ=0
+            for(i=(x-1);i!=0;--i){
+                diviver=x%i;
+                if(diviver===0){
+                    summ=summ+i;
+                    console.log(summ);
+                }
+            }
+            if(summ==x){
+                return "Число является совершенным"
+            }
+            else
+            return "Число не является совершенным"
+        }
+
+        let num=prompt("Введите число, что бы проверить, является ли оно совершенным", "28")
+        alert(perfectNumber(num))
+
+
+    </script>
+</body>
+</html>

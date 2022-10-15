@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("Task 7  Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс». Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.")
+
+        function duble_number(x){
+            x%=61;// если введенное число больше 60 отсекает остаток...
+            return(x<10)?"0"+x:x;// ... если число однозначное от в начало прибавляется ноль
+        }
+        
+        function time(h,m,s){
+            if(arguments.length==1){
+                alert(duble_number(h)+":00:00");
+            }
+            else if(arguments.length==2){
+                alert(duble_number(h)+":"+duble_number(m)+":00")
+            }
+            else if(arguments.length==3){
+                alert(duble_number(h)+":"+duble_number(m)+":"+duble_number(s))
+            }
+        }
+
+        let hour=Number(prompt("Введите сколько часов вы хотите задать", "10"))
+        let minutes=Number(prompt("Введите сколько минут вы хотите задать", "30"))
+        let seconds=Number(prompt("Введите сколько секунд вы хотите задать", "45"))
+
+        time(hour,minutes,seconds)
+    </script>
+</body>
+</html>

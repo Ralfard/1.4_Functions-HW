@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("Task 9   Написать функцию, которая принимает количество секунд, переводит их в часы, минуты и секунды и возвращает в виде строки «чч:мм:сс».")
+
+        function converting_seconds(s){
+            let m=Math.floor(s/60); //находим минуты
+            let h=Math.floor(m/60); //находим часы
+            if(m!=0)
+            s%=60;
+
+            if(h!=0)
+            m%=60;
+
+            if(m<10)
+            m="0"+m
+
+            else if(h<10)
+            h="0"+h
+
+            return h+":"+m+":"+s
+        }
+
+        let seconds=Number(prompt("Введите сколько секунд вы хотите задать", "37845"));
+
+        alert("Результат конвертации: "+converting_seconds(seconds))
+    </script>
+</body>
+</html>

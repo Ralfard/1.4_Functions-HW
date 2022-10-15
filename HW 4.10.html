@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("Task 10 <br> Написать функцию, которая считает разницу между датами.<br> Функция принимает 6 параметров, которые описывают 2 даты, и возвращает результат в виде строки «чч:мм:сс».<br> При выполнении задания используйте функции из предыду- щих 2-х заданий: сначала обе даты переведите в секунды, узнайте разницу в секундах, а потом разницу переведите обратно в «чч:мм:сс».")
+        
+        function time_in_seconds(s,m,h){                         
+            if(arguments.length==0){
+                return("Вы не ввели ни одного значения")
+            }
+            else if(arguments.length==1){
+                return(s)
+            }
+            else if(arguments.length==2){
+                return((m*60)+s)
+            }
+            else if(arguments.length==3){
+                return((h*3600)+(m*60)+s)
+            }
+        }  
+
+        function seconds_in_time(s){
+            m=Math.floor(s/60);
+            h=Math.floor(m/60);
+            if(m!=0){
+                s%=60
+            }
+            if(h!=0){
+                m%=60;
+            }
+            if(m<10)
+            m="0"+m
+            else if(h<10)
+            h="0"+h
+            return h+":"+m+":"+s
+        }
+
+        function difference(h1,m1,s1,h2,m2,s2){
+            x=time_in_seconds(s1,m1,h1)
+            y=time_in_seconds(s2,m2,h2)
+            if(x>y)
+            equals=x-y
+            else
+            equals=y-x
+
+            return seconds_in_time(equals)
+        }
+
+        let hour1=Number(prompt("Введите сколько часов в дате №1, вы хотите задать", "10"));
+        let minutes1=Number(prompt("Введите сколько минут в дате №1, вы хотите задать", "30"));
+        let seconds1=Number(prompt("Введите сколько секунд в дате №1, вы хотите задать", "45"));
+
+        let hour2=Number(prompt("Введите сколько часов в дате №2, вы хотите задать", "5"));
+        let minutes2=Number(prompt("Введите сколько минут в дате №2, вы хотите задать", "15"));
+        let seconds2=Number(prompt("Введите сколько секунд в дате №2, вы хотите задать", "30"));
+
+        alert(difference(hour1 ,minutes1 ,seconds1 ,hour2, minutes2, seconds2))
+
+
+
+    </script>
+</body>
+</html>
